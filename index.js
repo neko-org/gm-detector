@@ -11,12 +11,11 @@ module.exports = function GmDetector(dispatch) {
                 authorName: '',
                 message: message
             }); 
-            
-            dispatch.toClient('S_DUNGEON_EVENT_MESSAGE', 1, {
-                unk1: 42, // 42 Blue Shiny Text, 31 Normal Text
-                unk2: 0,
-                unk3: 27,
-                message: message
+            dispatch.toClient('S_DUNGEON_EVENT_MESSAGE', 2, {
+                type: 2,
+                message: message,
+				chat: false,
+				channel: 0
             }); 
             
             // show hidden GMs?
